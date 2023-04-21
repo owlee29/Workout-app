@@ -1,8 +1,8 @@
 package com.example.myapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,11 +16,18 @@ class MainActivity : AppCompatActivity() {
 
         //val flStartButton: FrameLayout = findViewById(R.id.flStart)
         binding?.flStart?.setOnClickListener {
-            Toast.makeText(
-                this,
-                "Exercise begin!",
-                Toast.LENGTH_SHORT
-            ).show()
+            val intent = Intent(this, ExerciseActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding?.flBMI?.setOnClickListener {
+            val intent = Intent(this, BMIActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding?.flHistory?.setOnClickListener {
+            val intent = Intent(this, HistoryActivity::class.java)
+            startActivity(intent)
         }
     }
 
